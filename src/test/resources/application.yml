@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: demo-ribbon
+
+ribbon:
+  eureka:
+    enabled: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: false
+    fetch-registry: true
+#demo-provider:
+#  ribbon:
+#    listOfServers: localhost:8089,localhost:8090
+
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
