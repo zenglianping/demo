@@ -36,14 +36,14 @@
             <scope>runtime</scope>
         </dependency>
 
-        <dependency>
+     <!--   <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -92,6 +92,19 @@
             <artifactId>junit-jupiter</artifactId>
             <version>5.5.2</version>
         </dependency>
+
+        <!--引入redisson 见https://github.com/redisson/redisson-->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.12.3</version>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-transport-native-epoll</artifactId>
+            <version>4.0.40.Final</version>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>
