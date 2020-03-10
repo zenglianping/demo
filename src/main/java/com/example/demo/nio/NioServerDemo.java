@@ -43,7 +43,6 @@ public class NioServerDemo {
                         socketChannel.register(selector, SelectionKey.OP_READ);
                         Socket socket = socketChannel.socket();
                         System.out.println("accept a client : " + socket.getInetAddress().getHostName());
-
                     }
 
                     if (selectionKey.isReadable()) {
@@ -51,20 +50,16 @@ public class NioServerDemo {
                         channel.configureBlocking(false);
 
                         ByteBuffer buffer = ByteBuffer.allocate(128);
-                        try {
-                            channel.read(buffer);
+                        int read = channel.read(buffer);//read 为读到的字节数
+                        if (read > 0) {
                             String msg = new String(buffer.array()).trim();
                             System.out.println("服务器读到数据："+msg);
-                        } catch (Exception e) {
-                            e.printStackTrace();;
-                            System.out.println("服务器读取数据异常，可能客户端已关闭");
-                            //发生异常，关闭连接
-                            channel.close();
+                        }else{
+                            System.out.println("客户端关闭");
+                            selectionKey.cancel();
                         }
 
-
                     }
-
 
                 }
 
