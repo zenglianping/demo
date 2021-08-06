@@ -1,6 +1,7 @@
 package util.stream.mock;
 
 /**
+ * 模拟实现Stream的Reduce方法
  * @author zenglp
  * @date 2020/1/21 9:46
  */

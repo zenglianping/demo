@@ -11,6 +11,9 @@ import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Set;
 
+/**
+ * 客户端2
+ */
 public class NioClientDemo2 {
 
     public static void main(String[] args) throws IOException {
